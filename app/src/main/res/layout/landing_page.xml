@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#151515">
+
+    <Button
+        android:id="@+id/buttonEnterGame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:width="250dp"
+        android:backgroundTint="#d4af37"
+        android:textColor="@color/black"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/buttonProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Profile"
+        app:layout_constraintEnd_toEndOf="@+id/buttonEnterGame"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/buttonEnterGame"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEnterGame"
+        android:width="250dp"
+        android:backgroundTint="#d4af37"
+        android:textColor="@color/black"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/buttonPreviousGames"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:text="Previous Games"
+        app:layout_constraintBottom_toTopOf="@+id/buttonEnterGame"
+        app:layout_constraintEnd_toEndOf="@+id/buttonEnterGame"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="@+id/buttonEnterGame"
+        android:width="250dp"
+        android:backgroundTint="#d4af37"
+        android:textColor="@color/black"
+        android:textSize="18dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
