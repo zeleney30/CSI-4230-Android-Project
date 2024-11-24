@@ -49,7 +49,7 @@
         android:background="@drawable/border"
         android:textColor="#DDDDDD"
         android:textSize="70sp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonWinLoss"
+        app:layout_constraintBottom_toTopOf="@+id/winLoss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Logo" />
