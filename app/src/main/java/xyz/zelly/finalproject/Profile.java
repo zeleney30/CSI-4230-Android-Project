@@ -20,6 +20,7 @@ public class Profile extends AppCompatActivity {
 
         backButton.setOnClickListener(e -> {
             Intent intent = new Intent(this, LandingPage.class);
+            startActivity(intent);
         });
     }
 }
