@@ -11,7 +11,7 @@
         android:layout_width="120dp"
         android:layout_height="70dp"
         android:layout_marginBottom="661dp"
-        android:src="@drawable/Logo"
+        android:src="@drawable/logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView"
         app:layout_constraintHorizontal_bias="0.0"
