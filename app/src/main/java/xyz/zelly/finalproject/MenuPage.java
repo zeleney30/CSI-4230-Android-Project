@@ -37,10 +37,10 @@ public class MenuPage extends AppCompatActivity {
         });
 
         finishedButton.setOnClickListener(e -> {
-            if (winLoss.getText().toString().trim().isEmpty() && goalsAgainst.getText().toString().trim().isEmpty() && savePercentage.getText().toString().trim().isEmpty()) {
+            if (winLoss.getText().toString().trim().isEmpty() || goalsAgainst.getText().toString().trim().isEmpty() || savePercentage.getText().toString().trim().isEmpty()) {
                 new AlertDialog.Builder(this).setTitle("Error").setMessage("The above fields cannot be empty!").setPositiveButton("OK", null).show();
             } else {
-                if (!winLoss.getText().toString().equalsIgnoreCase("W") || !winLoss.getText().toString().equalsIgnoreCase("L")) {
+                if (!winLoss.getText().toString().equalsIgnoreCase("W") && !winLoss.getText().toString().equalsIgnoreCase("L")) {
                     new AlertDialog.Builder(this).setTitle("Error").setMessage("The Win/Loss field must be either W or L!").setPositiveButton("OK", null).show();
                 } else {
                     if (Integer.parseInt(goalsAgainst.getText().toString()) < 0) {
