@@ -37,9 +37,9 @@ public class MenuPage extends AppCompatActivity {
         finishedButton.setOnClickListener(e -> {
             //If W/L, GA, and Save% are not default values ->
             Intent intent = new Intent(this, ReviewGame.class);
-            intent.putExtra("winLoss", winLoss.getText());
-            intent.putExtra("goalsAgainst", goalsAgainst.getText());
-            intent.putExtra("savePercentage", savePercentage.getText());
+            intent.putExtra("winLoss", winLoss.getText().toString());
+            intent.putExtra("goalsAgainst", goalsAgainst.getText().toString());
+            intent.putExtra("savePercentage", savePercentage.getText().toString());
             startActivity(intent);
             //Else ->
             //show pop up that these must be completed first

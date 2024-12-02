@@ -30,43 +30,47 @@ public class ReviewGame extends AppCompatActivity {
         goalsAgainst = intent.getStringExtra("goalsAgainst");
         savePercentage = intent.getStringExtra("savePercentage");
 
-        Float GA = Float.parseFloat(goalsAgainst);
-        Float SP = Float.parseFloat(savePercentage);
+        Integer GA = Integer.parseInt(goalsAgainst);
+        Integer SP = Integer.parseInt(savePercentage);
 
-        if (winLoss == "W") {
-            if (SP >= 90) {
-                gradeText.setText("A");
-            } else if (SP >= 80) {
-                gradeText.setText("B");
-            } else if (SP >= 70) {
-                gradeText.setText("C");
-            } else if (SP >= 60) {
-                gradeText.setText("D");
-            } else {
-                gradeText.setText("F");
-            }
-        } else if (winLoss == "L") {
-            if (GA >= 5) {
-                if (SP >= 80) {
-                    gradeText.setText("C");
-                } else if (SP >= 70) {
-                    gradeText.setText("D");
-                } else {
-                    gradeText.setText("F");
-                }
-            } else if (GA < 5) {
+        gradeText = findViewById(R.id.gradeTextUpdate);
+
+        if (GA instanceof Integer && SP instanceof Integer) {
+            if (winLoss.equals("W")) {
                 if (SP >= 90) {
-                    gradeText.setText("B");
+                    gradeText.setText("A");
                 } else if (SP >= 80) {
-                    gradeText.setText("C");
+                    gradeText.setText("B");
                 } else if (SP >= 70) {
+                    gradeText.setText("C");
+                } else if (SP >= 60) {
                     gradeText.setText("D");
                 } else {
                     gradeText.setText("F");
                 }
+            } else if (winLoss.equals("L")) {
+                if (GA >= 5) {
+                    if (SP >= 80) {
+                        gradeText.setText("C");
+                    } else if (SP >= 70) {
+                        gradeText.setText("D");
+                    } else {
+                        gradeText.setText("F");
+                    }
+                } else if (GA < 5) {
+                    if (SP >= 90) {
+                        gradeText.setText("B");
+                    } else if (SP >= 80) {
+                        gradeText.setText("C");
+                    } else if (SP >= 70) {
+                        gradeText.setText("D");
+                    } else {
+                        gradeText.setText("F");
+                    }
+                }
+            } else {
+                gradeText.setText("Err");
             }
-        } else {
-            gradeText.setText("?");
         }
 
         menuButton = findViewById(R.id.menuButton);
