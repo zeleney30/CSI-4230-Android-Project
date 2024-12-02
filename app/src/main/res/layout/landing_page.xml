@@ -35,6 +35,14 @@
         android:textColor="@color/black"
         android:textSize="18dp"/>
 
+    <ImageView
+        android:id="@+id/logo4"
+        android:layout_width="120dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/buttonPreviousGames"
         android:layout_width="wrap_content"
@@ -49,4 +57,17 @@
         android:backgroundTint="#d4af37"
         android:textColor="@color/black"
         android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/buttonLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Logout"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:backgroundTint="#d4af37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

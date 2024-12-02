@@ -6,47 +6,25 @@
     android:layout_height="match_parent"
     android:background="#151515">
 
+
     <ImageView
         android:id="@+id/Logo"
         android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginBottom="661dp"
         android:src="@drawable/logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="120dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="661dp"
-        android:gravity="center"
-        android:text="Menu"
-        android:textColor="#DDDDDD"
-        android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/Logo"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
-
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="425dp"
         android:layout_height="93dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="3dp"
+        android:paddingBottom="10dp"
         android:background="@drawable/border"
         android:gravity="center"
         android:text="Postgame"
         android:textColor="#DDDDDD"
-        android:textSize="70sp"
+        android:textSize="60dp"
         app:layout_constraintBottom_toTopOf="@+id/textWinLoss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -124,15 +102,28 @@
         android:id="@+id/buttonFinished"
         android:layout_width="250dp"
         android:layout_height="70dp"
-        android:backgroundTint="#d4af37"
         android:layout_marginTop="48dp"
+        android:backgroundTint="#d4af37"
         android:text="Finished"
-        android:textSize="24dp"
         android:textColor="@color/black"
+        android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="@+id/buttonEnterGoal"
         app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="@+id/buttonEnterGoal"
         app:layout_constraintTop_toBottomOf="@+id/buttonEnterGoal" />
+
+    <Button
+        android:id="@+id/buttonMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Menu"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:backgroundTint="#d4af37"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
