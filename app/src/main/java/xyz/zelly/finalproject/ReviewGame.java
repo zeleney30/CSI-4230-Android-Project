@@ -34,8 +34,8 @@ public class ReviewGame extends AppCompatActivity {
         menuButton = findViewById(R.id.menuButton);
 
         menuButton.setOnClickListener(e -> {
-            Intent intent = new Intent(this, LandingPage.class);
-            startActivity(intent);
+            Intent intentNew = new Intent(this, LandingPage.class);
+            startActivity(intentNew);
         });
     }
 }
