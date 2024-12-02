@@ -1,7 +1,9 @@
 package xyz.zelly.finalproject;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -28,10 +30,22 @@ public class MainActivity extends AppCompatActivity {
         });
 
         loginButton = findViewById(R.id.buttonLogin);
+        email = findViewById(R.id.inputEmail);
+        password = findViewById(R.id.inputPassword);
 
         loginButton.setOnClickListener(e -> {
-            Intent intent = new Intent(MainActivity.this, LandingPage.class);
-            startActivity(intent);
+            if (email.getText().toString().trim().isEmpty() || password.getText().toString().trim().isEmpty()) {
+                new AlertDialog.Builder(this).setTitle("Error").setMessage("The above fields cannot be empty!").setPositiveButton("OK", null).show();
+            } else {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email.getText().toString().trim()).matches()) {
+                    new AlertDialog.Builder(this).setTitle("Error").setMessage("Please enter a valid email address!").setPositiveButton("OK", null).show();
+                } else {
+                    //If email and password do not match a database element (aka user is not found)
+                    //new AlertDialog.Builder -> username and/or password not found!
+                    Intent intent = new Intent(MainActivity.this, LandingPage.class);
+                    startActivity(intent);
+                }
+            }
         });
     }
 }
