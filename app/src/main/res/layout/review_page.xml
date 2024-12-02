@@ -36,7 +36,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/gradeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -49,13 +49,13 @@
         app:layout_constraintTop_toBottomOf="@+id/menuButton" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/gradeTextUpdate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="A"
         android:textColor="@color/white"
         android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="@+id/gradeText"
+        app:layout_constraintStart_toStartOf="@+id/gradeText"
+        app:layout_constraintTop_toBottomOf="@+id/gradeText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

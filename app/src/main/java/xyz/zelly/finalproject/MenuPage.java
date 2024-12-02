@@ -3,6 +3,7 @@ package xyz.zelly.finalproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MenuPage extends AppCompatActivity {
     private Button enterGoal;
     private Button finishedButton;
+
+    private EditText winLoss;
+    private EditText goalsAgainst;
+    private EditText savePercentage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,12 +25,24 @@ public class MenuPage extends AppCompatActivity {
         enterGoal = findViewById(R.id.buttonEnterGoal);
         finishedButton = findViewById(R.id.buttonFinished);
 
+        winLoss = findViewById(R.id.textWinLoss);
+        goalsAgainst = findViewById(R.id.textGA);
+        savePercentage = findViewById(R.id.textSavePercentage);
+
         enterGoal.setOnClickListener(e -> {
             Intent intent = new Intent(this, EnterGoal.class);
+            startActivity(intent);
         });
 
         finishedButton.setOnClickListener(e -> {
+            //If W/L, GA, and Save% are not default values ->
             Intent intent = new Intent(this, ReviewGame.class);
+            intent.putExtra("winLoss", winLoss.getText());
+            intent.putExtra("goalsAgainst", goalsAgainst.getText());
+            intent.putExtra("savePercentage", savePercentage.getText());
+            startActivity(intent);
+            //Else ->
+            //show pop up that these must be completed first
         });
     }
 }

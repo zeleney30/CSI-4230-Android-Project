@@ -47,13 +47,13 @@
         android:text="Postgame"
         android:textColor="#DDDDDD"
         android:textSize="70sp"
-        app:layout_constraintBottom_toTopOf="@+id/winLoss"
+        app:layout_constraintBottom_toTopOf="@+id/textWinLoss"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Logo" />
 
     <EditText
-        android:id="@+id/winLoss"
+        android:id="@+id/textWinLoss"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginStart="51dp"
@@ -83,11 +83,11 @@
         android:textColor="#DDDDDD"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/winLoss"
+        app:layout_constraintStart_toEndOf="@+id/textWinLoss"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
-        android:id="@+id/buttonSavePercentage"
+        android:id="@+id/textSavePercentage"
         android:layout_width="85dp"
         android:layout_height="85dp"
         android:layout_marginStart="45dp"

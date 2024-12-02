@@ -25,10 +25,12 @@ public class LandingPage extends AppCompatActivity {
 
         enterGame.setOnClickListener(e -> {
             Intent intent = new Intent(this, MenuPage.class);
+            startActivity(intent);
         });
 
         profileButton.setOnClickListener(e -> {
             Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
         });
     }
 }
