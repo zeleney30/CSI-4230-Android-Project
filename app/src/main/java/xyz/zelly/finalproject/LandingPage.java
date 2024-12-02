@@ -11,6 +11,7 @@ public class LandingPage extends AppCompatActivity {
     private Button previousGames;
     private Button enterGame;
     private Button profileButton;
+    private Button logoutButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,6 +23,7 @@ public class LandingPage extends AppCompatActivity {
         previousGames = findViewById(R.id.buttonPreviousGames);
         enterGame = findViewById(R.id.buttonEnterGame);
         profileButton = findViewById(R.id.buttonProfile);
+        logoutButton = findViewById(R.id.buttonLogout);
 
         enterGame.setOnClickListener(e -> {
             Intent intent = new Intent(this, MenuPage.class);
@@ -30,6 +32,11 @@ public class LandingPage extends AppCompatActivity {
 
         profileButton.setOnClickListener(e -> {
             Intent intent = new Intent(this, Profile.class);
+            startActivity(intent);
+        });
+
+        logoutButton.setOnClickListener(e -> {
+            Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         });
     }
