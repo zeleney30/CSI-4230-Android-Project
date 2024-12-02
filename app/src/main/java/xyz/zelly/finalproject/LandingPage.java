@@ -24,7 +24,7 @@ public class LandingPage extends AppCompatActivity {
         profileButton = findViewById(R.id.buttonProfile);
 
         enterGame.setOnClickListener(e -> {
-            Intent intent = new Intent(this, PostGame.class);
+            Intent intent = new Intent(this, MenuPage.class);
         });
 
         profileButton.setOnClickListener(e -> {
