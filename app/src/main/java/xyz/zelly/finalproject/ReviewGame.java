@@ -36,7 +36,7 @@ public class ReviewGame extends AppCompatActivity {
         gradeText = findViewById(R.id.gradeTextUpdate);
 
         if (GA instanceof Integer && SP instanceof Integer) {
-            if (winLoss.equals("W")) {
+            if (winLoss.equalsIgnoreCase("W")) {
                 if (SP >= 90) {
                     gradeText.setText("A");
                 } else if (SP >= 80) {
@@ -48,7 +48,7 @@ public class ReviewGame extends AppCompatActivity {
                 } else {
                     gradeText.setText("F");
                 }
-            } else if (winLoss.equals("L")) {
+            } else if (winLoss.equalsIgnoreCase("L")) {
                 if (GA >= 5) {
                     if (SP >= 80) {
                         gradeText.setText("C");
