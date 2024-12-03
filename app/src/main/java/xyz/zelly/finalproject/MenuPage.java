@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +33,7 @@ public class MenuPage extends AppCompatActivity {
         enterGoal.setOnClickListener(e -> {
             Intent intent = new Intent(this, EnterGoal.class);
             startActivity(intent);
+            finish();
         });
 
         finishedButton.setOnClickListener(e -> {
@@ -56,6 +56,7 @@ public class MenuPage extends AppCompatActivity {
                             intent.putExtra("goalsAgainst", goalsAgainst.getText().toString());
                             intent.putExtra("savePercentage", savePercentage.getText().toString());
                             startActivity(intent);
+                            finish();
                         }
                     }
                 }

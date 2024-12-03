@@ -1,8 +1,10 @@
 package xyz.zelly.finalproject;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -38,26 +40,29 @@ public class MainActivity extends AppCompatActivity {
             String password = passwordInput.getText().toString().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                return;
+                new AlertDialog.Builder(this).setTitle("Error").setMessage("The above fields cannot be empty!").setPositiveButton("OK", null).show();
+            } else {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    new AlertDialog.Builder(this).setTitle("Error").setMessage("Please enter a valid email address!").setPositiveButton("OK", null).show();
+                } else {
+                    Log.d("MainActivity", "Sign Up Button clicked with Email: " + email + " and Password: " + password);
+
+                    // Execute the insert data operation on a background thread
+                    executorService.execute(() -> {
+                        boolean result = dbHelper.insertData(email, password);
+                        runOnUiThread(() -> {
+                            if (result) {
+                                new AlertDialog.Builder(this).setTitle("Sign Up").setMessage("Sign Up successfully completed!").setPositiveButton("OK", null).show();
+                                Intent intent = new Intent(MainActivity.this, LandingPage.class);
+                                startActivity(intent);
+                                finish(); // Finish the current activity
+                            } else {
+                                new AlertDialog.Builder(this).setTitle("Error").setMessage("This email is already in use!").setPositiveButton("OK", null).show();
+                            }
+                        });
+                    });
+                }
             }
-
-            Log.d("MainActivity", "Sign Up Button clicked with Email: " + email + " and Password: " + password);
-
-            // Execute the insert data operation on a background thread
-            executorService.execute(() -> {
-                boolean result = dbHelper.insertData(email, password);
-                runOnUiThread(() -> {
-                    if (result) {
-                        Toast.makeText(MainActivity.this, "Sign Up Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, LandingPage.class);
-                        startActivity(intent);
-                        finish(); // Finish the current activity
-                    } else {
-                        Toast.makeText(MainActivity.this, "Email already exists", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            });
         });
 
         // Log In Button Listener
@@ -66,26 +71,28 @@ public class MainActivity extends AppCompatActivity {
             String password = passwordInput.getText().toString().trim();
 
             if (email.isEmpty() || password.isEmpty()) {
-                Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
-                return;
+                new AlertDialog.Builder(this).setTitle("Error").setMessage("The above fields cannot be empty!").setPositiveButton("OK", null).show();
+            } else {
+                if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                    new AlertDialog.Builder(this).setTitle("Error").setMessage("Please enter a valid email address!").setPositiveButton("OK", null).show();
+                } else {
+                    Log.d("MainActivity", "Log In Button clicked with Email: " + email + " and Password: " + password);
+
+                    // Execute the login check operation on a background thread
+                    executorService.execute(() -> {
+                        boolean valid = dbHelper.checkEmailPassword(email, password);
+                        runOnUiThread(() -> {
+                            if (valid) {
+                                Intent intent = new Intent(MainActivity.this, LandingPage.class);
+                                startActivity(intent);
+                                finish(); // Finish the current activity
+                            } else {
+                                new AlertDialog.Builder(this).setTitle("Error").setMessage("Invalid Email or Password!").setPositiveButton("OK", null).show();
+                            }
+                        });
+                    });
+                }
             }
-
-            Log.d("MainActivity", "Log In Button clicked with Email: " + email + " and Password: " + password);
-
-            // Execute the login check operation on a background thread
-            executorService.execute(() -> {
-                boolean valid = dbHelper.checkEmailPassword(email, password);
-                runOnUiThread(() -> {
-                    if (valid) {
-                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(MainActivity.this, LandingPage.class);
-                        startActivity(intent);
-                        finish(); // Finish the current activity
-                    } else {
-                        Toast.makeText(MainActivity.this, "Invalid Email or Password", Toast.LENGTH_SHORT).show();
-                    }
-                });
-            });
         });
     }
 }
