@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FinalProject"
         tools:targetApi="31">
-        <activity android:name=".LandingPage"></activity>
+        <activity android:name=".LandingPage" android:label="Landing Page" />
         <activity android:name=".MenuPage"></activity>
         <activity android:name=".Profile"></activity>
         <activity android:name=".EnterGoal"></activity>
@@ -26,6 +26,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Add the LandingPage activity here -->
+
+
     </application>
 
 </manifest>
