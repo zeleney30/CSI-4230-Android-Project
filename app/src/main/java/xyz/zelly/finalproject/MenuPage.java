@@ -10,6 +10,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MenuPage extends AppCompatActivity {
+    private Button menuButton;
     private Button enterGoal;
     private Button finishedButton;
 
@@ -23,12 +24,18 @@ public class MenuPage extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.menu_page);
 
+        menuButton = findViewById(R.id.buttonMenu);
         enterGoal = findViewById(R.id.buttonEnterGoal);
         finishedButton = findViewById(R.id.buttonFinished);
 
         winLoss = findViewById(R.id.textWinLoss);
         goalsAgainst = findViewById(R.id.textGA);
         savePercentage = findViewById(R.id.textSavePercentage);
+
+        menuButton.setOnClickListener(e -> {
+            Intent intent = new Intent(this, LandingPage.class);
+            startActivity(intent);
+        });
 
         enterGoal.setOnClickListener(e -> {
             Intent intent = new Intent(this, EnterGoal.class);
