@@ -32,11 +32,11 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="24dp"
+        android:src="@drawable/avatar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonBack"
-        tools:srcCompat="@tools:sample/avatars" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonBack" />
 
     <EditText
         android:id="@+id/editTextText"
@@ -45,7 +45,8 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:hint="Name"
+        android:textColorHint="#DDDDDD"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +62,8 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:inputType="date"
-        android:text="D.O.B."
+        android:hint="D.O.B."
+        android:textColorHint="#DDDDDD"
         android:textColor="#DDDDDD"
         app:layout_constraintEnd_toEndOf="@+id/editTextText"
         app:layout_constraintHorizontal_bias="0.0"
@@ -76,7 +78,8 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:inputType="text"
-        android:text="Height"
+        android:hint="Height"
+        android:textColorHint="#DDDDDD"
         android:textColor="#DDDDDD"
         app:layout_constraintEnd_toEndOf="@+id/editTextDate"
         app:layout_constraintHorizontal_bias="0.0"
@@ -91,7 +94,8 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:inputType="text"
-        android:text="Team"
+        android:hint="Team"
+        android:textColorHint="#DDDDDD"
         android:textColor="#DDDDDD"
         app:layout_constraintEnd_toEndOf="@+id/editTextText3"
         app:layout_constraintHorizontal_bias="0.0"
@@ -112,6 +116,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/editTextText4"
         app:layout_constraintTop_toBottomOf="@+id/editTextText4"
-        tools:text="Notes" />
+        tools:hint="Notes"
+        android:textColorHint="#DDDDDD"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
